@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Viola — студия эстетической косметологии в Пятигорске (демо)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8f5fb;
+    --paper: #ffffff;
+    --ink: #2a2238;
+    --plum: #5b3f86;
+    --violet: #8b6fd6;
+    --lav: #ece5f8;
+    --lav-2: #ddd1f2;
+    --peach: #f7dfd3;
+    --muted: #7b7189;
+    --line: #e7dff1;
+    --wa: #1fbf5c;
+    --display: "Tenor Sans", "Georgia", serif;
+    --body: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+  section[id] { scroll-margin-top: 70px; }
+
+  .demo-bar { background: var(--ink); color: #d6cce6; font-size: 12.5px; text-align: center; padding: 7px 16px; }
+  .demo-bar b { color: #fff; }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 30; background: rgba(248,245,251,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo svg { width: 42px; height: 42px; flex: none; }
+  .logo b { font-family: var(--display); font-weight: 400; font-size: 27px; letter-spacing: .06em; line-height: 1; display: block; }
+  .logo small { display: block; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 4px; font-weight: 600; }
+  .nav-links { display: flex; gap: 28px; font-size: 14.5px; font-weight: 500; }
+  .nav-links a { text-decoration: none; color: var(--muted); transition: color .2s; }
+  .nav-links a:hover { color: var(--plum); }
+  .nav-cta { text-decoration: none; font-weight: 600; font-size: 14.5px; background: var(--plum); color: #fff; padding: 12px 22px; border-radius: 999px; white-space: nowrap; }
+
+  /* buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 17px 28px; border-radius: 999px; font: 600 15.5px var(--body); text-decoration: none; border: 0; cursor: pointer; transition: transform .15s, box-shadow .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-plum { background: var(--plum); color: #fff; box-shadow: 0 14px 30px -14px rgba(91,63,134,.8); }
+  .btn-soft { background: var(--paper); color: var(--plum); border: 1.5px solid var(--lav-2); }
+  .btn-wa { background: var(--wa); color: #fff; }
+  .btn-max { background: linear-gradient(135deg, #3d7bff 0%, #8a4dff 100%); color: #fff; }
+  .btn svg { width: 19px; height: 19px; flex: none; }
+  .max-ico { width: 21px; height: 21px; border-radius: 7px; box-shadow: 0 0 0 1.5px rgba(255,255,255,.55); flex: none; }
+
+  .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--violet); }
+  .kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--violet); box-shadow: 0 0 0 5px var(--lav); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; }
+  h1 em, h2 em { font-style: normal; background: linear-gradient(100deg, var(--plum), var(--violet) 55%, #d48aa8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* hero */
+  .hero { position: relative; padding: 70px 0 90px; overflow: hidden; }
+  .aura { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .7; z-index: -1; animation: float 16s ease-in-out infinite; }
+  .a1 { width: 520px; height: 520px; background: #d9c8fb; top: -140px; right: -80px; }
+  .a2 { width: 420px; height: 420px; background: #fbd9cc; bottom: -160px; right: 280px; animation-delay: -5s; }
+  .a3 { width: 360px; height: 360px; background: #e6d8ff; top: 120px; left: -160px; animation-delay: -9s; }
+  @keyframes float { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-26px) scale(1.08); } }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  h1 { font-size: clamp(44px, 6vw, 82px); line-height: 1.02; letter-spacing: -.01em; margin: 22px 0 22px; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 500px; margin: 0 0 34px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+  .facts span { background: rgba(255,255,255,.7); border: 1px solid var(--line); backdrop-filter: blur(6px); border-radius: 999px; padding: 9px 15px; font-size: 13.5px; font-weight: 600; }
+  .facts span b { color: var(--plum); }
+
+  .collage { position: relative; height: 560px; }
+  .c-main { position: absolute; right: 0; top: 0; width: 82%; height: 88%; border-radius: 48px 48px 220px 48px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(42,34,56,.5); }
+  .c-main img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; }
+  .c-round { position: absolute; left: 0; bottom: 0; width: 42%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 8px solid var(--bg); box-shadow: 0 30px 60px -30px rgba(42,34,56,.6); }
+  .c-round img { width: 100%; height: 100%; object-fit: cover; }
+  .glass { position: absolute; background: rgba(255,255,255,.72); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.9); border-radius: 20px; padding: 14px 18px; box-shadow: 0 20px 40px -20px rgba(42,34,56,.4); font-size: 13.5px; }
+  .glass b { font-family: var(--display); font-weight: 400; font-size: 19px; display: block; }
+  .glass small { color: var(--muted); }
+  .g1 { right: -10px; top: 40px; }
+  .g2 { right: 30px; bottom: 120px; display: flex; align-items: center; gap: 12px; }
+  .g2 .rate { font-family: var(--display); font-size: 34px; line-height: 1; color: var(--plum); }
+  .stars { color: #e7a93c; letter-spacing: 1.5px; font-size: 13px; }
+
+  /* sections */
+  section { padding: 100px 0; }
+  .sec-head { text-align: center; max-width: 720px; margin: 0 auto 54px; }
+  h2 { font-size: clamp(36px, 4.6vw, 60px); line-height: 1.05; margin: 16px 0 14px; }
+  .sec-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+  /* directions */
+  .dirs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .dir { background: var(--paper); border-radius: 32px; overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .dir-photo { aspect-ratio: 4/3.2; overflow: hidden; position: relative; }
+  .dir-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
+  .dir:hover .dir-photo img { transform: scale(1.05); }
+  .dir-num { position: absolute; left: 18px; top: 18px; background: rgba(255,255,255,.85); backdrop-filter: blur(6px); border-radius: 999px; padding: 6px 13px; font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--plum); }
+  .dir-body { padding: 26px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+  .dir h3 { font-size: 30px; margin: 0 0 8px; }
+  .dir p { color: var(--muted); margin: 0 0 18px; font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+  .tags span { background: var(--lav); color: var(--plum); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  details { margin-top: auto; border-top: 1px solid var(--line); padding-top: 16px; }
+  summary { cursor: pointer; font-weight: 600; color: var(--plum); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 22px; line-height: 1; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details ul { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--ink); }
+  details li { padding-left: 18px; position: relative; }
+  details li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--violet); }
+  .disclaimer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 26px; }
+
+  /* highlights */
+  .hl { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .hl-card { position: relative; border-radius: 36px; overflow: hidden; min-height: 460px; color: #fff; display: flex; align-items: flex-end; }
+  .hl-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hl-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,34,56,0) 25%, rgba(42,34,56,.88) 100%); }
+  .hl-body { position: relative; z-index: 1; padding: 36px; }
+  .hl-body .kicker { color: #e6dbff; }
+  .hl-body .kicker::before { background: #e6dbff; box-shadow: 0 0 0 5px rgba(255,255,255,.2); }
+  .hl-body h3 { font-size: 38px; margin: 12px 0 10px; line-height: 1.05; }
+  .hl-body p { margin: 0 0 22px; color: #e9e3f2; max-width: 440px; }
+  .hl-body .btn { background: #fff; color: var(--plum); }
+
+  /* quiz */
+  .quiz { background: var(--paper); border: 1px solid var(--line); border-radius: 40px; padding: 48px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 44px; position: relative; overflow: hidden; }
+  .quiz::before { content: ""; position: absolute; width: 380px; height: 380px; border-radius: 50%; background: var(--lav); filter: blur(60px); right: -120px; top: -120px; }
+  .quiz > * { position: relative; }
+  .q-step { margin-bottom: 30px; }
+  .q-label { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; display: flex; gap: 10px; align-items: center; }
+  .q-label i { font-style: normal; width: 26px; height: 26px; border-radius: 50%; background: var(--plum); color: #fff; display: grid; place-items: center; font-size: 12.5px; letter-spacing: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { font: 600 15px var(--body); border: 1.5px solid var(--line); background: var(--bg); color: var(--ink); padding: 12px 18px; border-radius: 999px; cursor: pointer; transition: all .18s; }
+  .chip:hover { border-color: var(--violet); }
+  .chip[aria-pressed="true"] { background: var(--plum); border-color: var(--plum); color: #fff; }
+  .zone-chip { padding: 14px 22px; font-size: 16px; }
+  .result { background: linear-gradient(160deg, #3d2c5c, #5b3f86 60%, #8b6fd6); color: #fff; border-radius: 30px; padding: 34px; display: flex; flex-direction: column; min-height: 100%; }
+  .result small { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #d8cdf0; font-weight: 700; }
+  .result h3 { font-size: 30px; margin: 10px 0 18px; line-height: 1.1; }
+  .result ul { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 10px; }
+  .result li { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 12px 16px; font-weight: 600; }
+  .result p { font-size: 13px; color: #d8cdf0; margin: auto 0 18px; }
+  .result .btn { background: #fff; color: var(--plum); }
+  .result-empty { opacity: .85; }
+
+  /* prices + certificate */
+  .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+  .prices { background: var(--paper); border: 1px solid var(--line); border-radius: 36px; padding: 40px; }
+  .prices h3 { font-size: 34px; margin: 12px 0 22px; }
+  .p-row { display: flex; align-items: baseline; gap: 12px; padding: 18px 0; border-bottom: 1px dashed var(--line); }
+  .p-row:last-of-type { border-bottom: 0; }
+  .p-row span:first-child { font-weight: 600; }
+  .p-row i { flex: 1; border-bottom: 1.5px dotted var(--lav-2); transform: translateY(-5px); }
+  .p-row b { font-family: var(--display); font-weight: 400; font-size: 22px; color: var(--plum); white-space: nowrap; }
+  .promo { margin-top: 20px; background: var(--peach); border-radius: 20px; padding: 16px 20px; display: flex; gap: 14px; align-items: center; font-weight: 600; }
+  .promo em { font-style: normal; font-family: var(--display); font-size: 28px; color: #b4553a; white-space: nowrap; }
+  .p-note { font-size: 13px; color: var(--muted); margin: 16px 0 0; }
+  .cert { position: relative; border-radius: 36px; overflow: hidden; padding: 40px; color: var(--ink); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; background: var(--lav); }
+  .cert-card { position: relative; aspect-ratio: 1.7; border-radius: 22px; background: linear-gradient(135deg, #5b3f86, #8b6fd6 55%, #f0a6c0); color: #fff; padding: 26px; box-shadow: 0 30px 60px -30px rgba(91,63,134,.9); transform: rotate(-3deg); transition: transform .4s; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; max-width: 420px; }
+  .cert:hover .cert-card { transform: rotate(0); }
+  .cert-card::after { content: ""; position: absolute; width: 240px; height: 240px; border-radius: 50%; border: 36px solid rgba(255,255,255,.12); right: -80px; bottom: -110px; }
+  .cert-card .t { font-family: var(--display); font-size: 26px; letter-spacing: .06em; }
+  .cert-card .v { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; opacity: .9; }
+  .cert-card .sum { font-family: var(--display); font-size: 40px; line-height: 1; }
+  .cert h3 { font-size: 34px; margin: 0 0 10px; }
+  .cert p { margin: 0 0 20px; color: var(--muted); }
+
+  /* reviews */
+  .reviews { display: grid; grid-template-columns: .8fr 1.2fr; gap: 20px; }
+  .r-score { background: var(--plum); color: #fff; border-radius: 36px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+  .r-score .big { font-family: var(--display); font-size: 96px; line-height: .9; }
+  .r-score p { margin: 0; color: #ddd2f0; }
+  .r-score a { color: #fff; font-weight: 600; }
+  .r-themes { background: var(--paper); border: 1px solid var(--line); border-radius: 36px; padding: 40px; }
+  .r-themes h3 { font-size: 30px; margin: 0 0 22px; }
+  .theme-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .theme-list div { display: flex; gap: 12px; align-items: center; background: var(--bg); border-radius: 18px; padding: 14px 16px; font-weight: 600; font-size: 15px; }
+  .theme-list em { font-style: normal; font-size: 20px; width: 40px; height: 40px; border-radius: 50%; background: var(--lav); display: grid; place-items: center; flex: none; }
+
+  /* booking */
+  .book { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+  .book-copy p { color: var(--muted); font-size: 17px; margin: 18px 0 28px; max-width: 420px; }
+  .book-photo { margin-top: 34px; border-radius: 200px 200px 36px 36px; overflow: hidden; aspect-ratio: 4/3.6; max-width: 380px; }
+  .book-photo img { width: 100%; height: 100%; object-fit: cover; }
+  form { background: var(--paper); border: 1px solid var(--line); border-radius: 36px; padding: 38px; display: grid; gap: 16px; box-shadow: 0 40px 80px -50px rgba(42,34,56,.45); }
+  form h3 { font-size: 32px; margin: 0 0 4px; }
+  label { display: grid; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  input, select, textarea { font: 500 16px var(--body); color: var(--ink); background: var(--bg); border: 1.5px solid transparent; border-radius: 16px; padding: 15px 16px; width: 100%; transition: border-color .15s; -webkit-appearance: none; appearance: none; }
+  select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 22px) 52%, calc(100% - 16px) 52%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+  textarea { resize: vertical; min-height: 54px; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--violet); background-color: #fff; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .consent { display: flex; gap: 12px; align-items: flex-start; text-transform: none; letter-spacing: 0; font-size: 13.5px; font-weight: 500; }
+  .consent input { width: 20px; height: 20px; padding: 0; flex: none; margin-top: 1px; -webkit-appearance: checkbox; appearance: auto; accent-color: var(--plum); }
+  form .btn { width: 100%; }
+  .form-msg { display: none; margin: 0; background: var(--lav); border-radius: 14px; padding: 14px 16px; font-size: 14px; color: var(--plum); }
+
+  /* contacts */
+  .contacts { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; }
+  .addr { position: relative; overflow: hidden; background: linear-gradient(150deg, #efe7fb, #fbe7df); border-radius: 36px; padding: 44px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 360px; }
+  .addr h3 { font-size: clamp(34px, 4vw, 50px); line-height: 1.02; margin: 14px 0 10px; }
+  .addr p { margin: 0; color: var(--muted); }
+  .hours { display: inline-flex; gap: 10px; align-items: center; background: #fff; border-radius: 999px; padding: 10px 16px; font-weight: 600; font-size: 14.5px; margin-top: 18px; }
+  .hours i { width: 8px; height: 8px; border-radius: 50%; background: var(--wa); }
+  .links { display: grid; gap: 12px; }
+  .lnk { display: flex; justify-content: space-between; align-items: center; gap: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 20px 24px; text-decoration: none; transition: border-color .15s, transform .15s; }
+  .lnk:hover { border-color: var(--violet); transform: translateX(4px); }
+  .lnk small { display: block; font-size: 12px; font-weight: 700; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .lnk b { font-size: 18px; font-weight: 600; }
+  .lnk .ic { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; flex: none; overflow: hidden; }
+  .lnk .ic svg { width: 22px; height: 22px; }
+  .lnk .ic img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); }
+
+  footer { padding: 40px 0 48px; border-top: 1px solid var(--line); margin-top: 10px; }
+  .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; font-size: 13.5px; color: var(--muted); }
+  .foot b { color: var(--ink); }
+
+  /* floating */
+  .float-msg { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: grid; gap: 12px; }
+  .fab { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 12px 28px rgba(42,34,56,.3); transition: transform .15s; position: relative; }
+  .fab:hover { transform: scale(1.08); }
+  .fab svg { width: 30px; height: 30px; }
+  .fab-wa { background: var(--wa); }
+  .fab-max img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+  .fab::after { content: attr(data-label); position: absolute; right: 72px; top: 50%; transform: translateY(-50%); background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; padding: 7px 11px; border-radius: 9px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .15s; }
+  .fab:hover::after { opacity: 1; }
+  .mobile-bar { display: none; }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } .aura { animation: none; } }
+
+  /* responsive */
+  @media (max-width: 980px) {
+    .hero-grid, .hl, .quiz, .offer-grid, .reviews, .book, .contacts { grid-template-columns: 1fr; }
+    .dirs { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+    .nav-links { display: none; }
+    .collage { height: 480px; max-width: 520px; width: 100%; margin: 0 auto; }
+    .book-photo { display: none; }
+    section { padding: 80px 0; }
+  }
+  @media (max-width: 560px) {
+    body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); -webkit-tap-highlight-color: transparent; }
+    .wrap { padding: 0 18px; }
+    .demo-bar .long { display: none; }
+    .nav { height: 62px; }
+    .logo svg { width: 36px; height: 36px; }
+    .logo b { font-size: 23px; }
+    .logo small { display: none; }
+    .nav-cta { padding: 10px 16px; font-size: 13.5px; }
+    .hero { padding: 36px 0 56px; }
+    h1 { font-size: 42px; margin: 16px 0 16px; }
+    .lead { font-size: 16.5px; margin-bottom: 26px; }
+    .cta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cta .btn-plum { grid-column: 1 / -1; }
+    .btn { padding: 15px 18px; font-size: 15px; }
+    .facts { margin-top: 24px; gap: 8px; }
+    .facts span { font-size: 12.5px; padding: 8px 12px; }
+    .collage { height: 400px; }
+    .c-main { width: 88%; border-radius: 34px 34px 140px 34px; }
+    .c-round { width: 46%; border-width: 6px; }
+    .g1 { right: 8px; top: 18px; padding: 10px 14px; }
+    .g1 b { font-size: 16px; }
+    .g2 { right: 8px; bottom: 90px; padding: 10px 14px; }
+    .g2 .rate { font-size: 28px; }
+    section { padding: 64px 0; }
+    .sec-head { margin-bottom: 34px; }
+    h2 { font-size: 36px; }
+    .sec-head p { font-size: 15.5px; }
+    .dir h3 { font-size: 26px; }
+    .dir-body { padding: 22px 22px 24px; }
+    .hl-card { min-height: 420px; border-radius: 28px; }
+    .hl-body { padding: 26px 22px; }
+    .hl-body h3 { font-size: 30px; }
+    .quiz { padding: 28px 20px; border-radius: 28px; gap: 26px; }
+    .chip { font-size: 14px; padding: 10px 14px; }
+    .zone-chip { padding: 12px 18px; font-size: 15px; }
+    .result { padding: 26px 22px; border-radius: 24px; }
+    .result h3 { font-size: 25px; }
+    .prices, .cert, .r-score, .r-themes { padding: 28px 22px; border-radius: 28px; }
+    .prices h3, .cert h3 { font-size: 28px; }
+    .p-row { flex-wrap: wrap; gap: 4px 10px; }
+    .p-row span:first-child { flex: 1 1 100%; }
+    .p-row i { display: none; }
+    .promo em { font-size: 24px; }
+    .cert-card { padding: 20px; }
+    .cert-card .sum { font-size: 32px; }
+    .r-score .big { font-size: 76px; }
+    .theme-list { grid-template-columns: 1fr; }
+    form { padding: 26px 20px; border-radius: 28px; }
+    form h3 { font-size: 28px; }
+    .row { grid-template-columns: 1fr; }
+    .addr { padding: 30px 24px; min-height: 0; border-radius: 28px; }
+    .addr .btn { width: 100%; }
+    .lnk { padding: 16px 18px; }
+    .lnk b { font-size: 16px; }
+    .foot { flex-direction: column; gap: 6px; font-size: 13px; }
+
+    .float-msg { display: none; }
+    .mobile-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(248,245,251,.95); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+    .mobile-bar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; height: 54px; border-radius: 16px; text-decoration: none; font-weight: 700; font-size: 12.5px; color: #fff; }
+    .mobile-bar svg, .mobile-bar .max-ico { width: 22px; height: 22px; }
+    .mb-call { background: var(--plum); }
+    .mb-wa { background: var(--wa); }
+    .mb-max { background: linear-gradient(135deg, #3d7bff 0%, #8a4dff 100%); }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Демо-концепт<span class="long"> сайта для студии Viola</span> · подготовил <b>Денис Лопатин</b><span class="long"> · не является официальным сайтом студии</span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Viola">
+      <svg viewBox="0 0 48 48" aria-hidden="true">
+        <ellipse cx="17" cy="15" rx="8" ry="10" transform="rotate(-25 17 15)" fill="#5b3f86"/>
+        <ellipse cx="31" cy="15" rx="8" ry="10" transform="rotate(25 31 15)" fill="#5b3f86"/>
+        <ellipse cx="12" cy="27" rx="8" ry="9" transform="rotate(-60 12 27)" fill="#8b6fd6"/>
+        <ellipse cx="36" cy="27" rx="8" ry="9" transform="rotate(60 36 27)" fill="#8b6fd6"/>
+        <ellipse cx="24" cy="34" rx="9" ry="9.5" fill="#b9a5ec"/>
+        <circle cx="24" cy="25" r="3.6" fill="#f2c14e"/>
+      </svg>
+      <span><b>VIOLA</b><small>эстетическая косметология</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Услуги</a>
+      <a href="#quiz">Подбор процедуры</a>
+      <a href="#offers">Цены</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="nav-cta" href="#book">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="aura a1"></div><div class="aura a2"></div><div class="aura a3"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Пятигорск · Крайнего, 49</span>
+        <h1>Красота, которой <em>хочется любоваться</em></h1>
+        <p class="lead">Студия эстетической косметологии для тех, кто хочет иметь превосходную внешность. Лицо, тело и ногти — в одном месте, в центре города.</p>
+        <div class="cta">
+          <a class="btn btn-plum" href="#book">Записаться на приём</a>
+          <a class="btn btn-wa" href="https://wa.me/79289367298" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn btn-max" href="https://max.ru/u/f9LHodD0cOK2wFYBAtwKZ3Esj-9cR9CvtsTNpPrikWdXgPuepH3lUZya09M" target="_blank" rel="noopener"><img class="max-ico" src="img/max.png" alt=""> Max</a>
+        </div>
+        <div class="facts">
+          <span><b>Лицо</b> · косметология</span>
+          <span><b>Тело</b> · массаж, B-flexy</span>
+          <span><b>Ногти</b> · маникюр, педикюр</span>
+        </div>
+      </div>
+      <div class="collage reveal">
+        <div class="c-main"><img src="img/skin.jpg" alt="Косметолог проводит процедуру по уходу за кожей лица"></div>
+        <div class="c-round"><img src="img/nails.jpg" alt="Ухоженные руки с нюдовым маникюром" loading="lazy" style="object-position:50% 70%"></div>
+        <div class="glass g1"><small>Пн–Сб</small><b>9:00 — 20:00</b></div>
+        <div class="glass g2"><span class="rate">5.0</span><span><span class="stars">★★★★★</span><br><small>33 оценки в 2ГИС</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding-top:40px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Направления</span>
+        <h2>Забота <em>с головы до кончиков пальцев</em></h2>
+        <p>Три направления студии. Откройте список, чтобы увидеть все процедуры.</p>
+      </div>
+      <div class="dirs">
+        <article class="dir reveal">
+          <div class="dir-photo"><img src="img/peel.jpg" alt="Аппаратная процедура для лица" loading="lazy"><span class="dir-num">01 · ЛИЦО</span></div>
+          <div class="dir-body">
+            <h3>Косметология</h3>
+            <p>Чистки, пилинги, аппаратные методики, омоложение и эпиляция.</p>
+            <div class="tags"><span>Фотоомоложение</span><span>Чистка лица</span><span>СМАС-лифтинг</span><span>Пилинги</span></div>
+            <details>
+              <summary>Все процедуры</summary>
+              <ul>
+                <li>Чистка лица: классическая, УЗИ, комбинированная, чистка форте</li>
+                <li>Пилинги: химические, механические, энзимные, газожидкостный Jet Peel, алмазная микродермабразия</li>
+                <li>Аппаратная косметология: электропорация, микротоки, ультрафонофорез, дарсонваль, СМАС-лифтинг, холодная плазма</li>
+                <li>Массаж лица: классический, скульптурный, марокканский, хиро, буккальный и другие</li>
+                <li>Фотоомоложение</li>
+                <li>Плазмолифтинг, биоревитализация, мезотерапия</li>
+                <li>Электроэпиляция, фотоэпиляция, шугаринг, воск</li>
+                <li>Удаление новообразований, сосудов и пигментации</li>
+                <li>Коррекция и окрашивание бровей</li>
+              </ul>
+            </details>
+          </div>
+        </article>
+        <article class="dir reveal">
+          <div class="dir-photo"><img src="img/massage.jpg" alt="Массаж спины" loading="lazy" style="object-position:50% 60%"><span class="dir-num">02 · ТЕЛО</span></div>
+          <div class="dir-body">
+            <h3>Массаж и тело</h3>
+            <p>Массажи для расслабления, лёгкости и коррекции фигуры.</p>
+            <div class="tags"><span>B-flexy</span><span>Лимфодренаж</span><span>Антицеллюлитный</span><span>Релакс</span></div>
+            <details>
+              <summary>Все процедуры</summary>
+              <ul>
+                <li>Все виды массажа: общий, лимфодренажный, антицеллюлитный, испанский, релакс, шейно-воротниковый, моделирующий</li>
+                <li>B-flexy — вакуумно-роликовый массаж тела</li>
+                <li>Обёртывание</li>
+                <li>Пилинг тела</li>
+                <li>Арома-сауна</li>
+                <li>Массаж травяными мешочками</li>
+                <li>Гуаша</li>
+              </ul>
+            </details>
+          </div>
+        </article>
+        <article class="dir reveal">
+          <div class="dir-photo"><img src="img/nails2.jpg" alt="Маникюр в сиреневых тонах" loading="lazy"><span class="dir-num">03 · НОГТИ</span></div>
+          <div class="dir-body">
+            <h3>Маникюр и педикюр</h3>
+            <p>Ухоженные руки и стопы, аккуратное и стойкое покрытие.</p>
+            <div class="tags"><span>Японский</span><span>Аппаратный</span><span>Гель-лак</span></div>
+            <details>
+              <summary>Все процедуры</summary>
+              <ul>
+                <li>Классический маникюр и педикюр</li>
+                <li>Японский маникюр и педикюр</li>
+                <li>Аппаратный маникюр и педикюр</li>
+                <li>Покрытие гель-лаком</li>
+              </ul>
+            </details>
+          </div>
+        </article>
+      </div>
+      <p class="disclaimer">Имеются противопоказания. Необходима консультация специалиста.</p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section style="padding-top:0">
+    <div class="wrap hl">
+      <div class="hl-card reveal">
+        <img src="img/face.jpg" alt="Уход за кожей лица" loading="lazy" style="object-position:50% 30%">
+        <div class="hl-body">
+          <span class="kicker">Хит студии</span>
+          <h3>Фотоомоложение</h3>
+          <p>Помогает при куперозе, сосудистых звёздочках и пигментных пятнах, уменьшает морщины, даёт лифтинг и улучшает качество кожи.</p>
+          <a class="btn" href="#book" data-proc="face|Фотоомоложение">Хочу фотоомоложение</a>
+        </div>
+      </div>
+      <div class="hl-card reveal">
+        <img src="img/stones.jpg" alt="Массаж тела" loading="lazy">
+        <div class="hl-body">
+          <span class="kicker">Коррекция фигуры</span>
+          <h3>B-flexy</h3>
+          <p>Процедура на высокотехнологичном оборудовании для коррекции фигуры и борьбы с целлюлитом.</p>
+          <a class="btn" href="#book" data-proc="body|B-flexy — вакуумно-роликовый массаж">Записаться на B-flexy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Подбор процедуры</span>
+        <h2>Не знаете, <em>с чего начать?</em></h2>
+        <p>Ответьте на два вопроса — подскажем, какие процедуры обсудить со специалистом.</p>
+      </div>
+      <div class="quiz reveal">
+        <div>
+          <div class="q-step">
+            <p class="q-label"><i>1</i>Что хотите улучшить?</p>
+            <div class="chips" id="zones">
+              <button class="chip zone-chip" type="button" data-z="face">Лицо</button>
+              <button class="chip zone-chip" type="button" data-z="body">Тело</button>
+              <button class="chip zone-chip" type="button" data-z="nails">Руки и стопы</button>
+            </div>
+          </div>
+          <div class="q-step" id="step2" hidden>
+            <p class="q-label"><i>2</i>Что беспокоит?</p>
+            <div class="chips" id="concerns"></div>
+          </div>
+        </div>
+        <div class="result" id="result">
+          <small>Ваш подбор</small>
+          <h3 id="rTitle">Выберите зону слева</h3>
+          <ul id="rList"></ul>
+          <p>Окончательно процедуру подберёт специалист на консультации. Имеются противопоказания.</p>
+          <a class="btn" href="#book" id="rBtn" style="visibility:hidden">Записаться на консультацию</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="offers" style="padding-top:0">
+    <div class="wrap offer-grid">
+      <div class="prices reveal">
+        <span class="kicker">Цены</span>
+        <h3>Стоимость</h3>
+        <div class="p-row"><span>Массаж всего тела</span><i></i><b>от 2 500 ₽</b></div>
+        <div class="p-row"><span>Абонементы на коррекцию фигуры</span><i></i><b>от 1 000 ₽</b></div>
+        <div class="p-row"><span>Подарочный сертификат</span><i></i><b>от 500 ₽</b></div>
+        <div class="promo"><em>−500 ₽</em><span>на первый массаж всего тела</span></div>
+        <p class="p-note">Цены и акция — из открытой карточки студии в 2ГИС, не являются публичной офертой. Стоимость остальных процедур уточняйте у администратора — на рабочем сайте здесь будет полный прайс.</p>
+      </div>
+      <div class="cert reveal">
+        <div class="cert-card">
+          <span class="v">Подарочный сертификат</span>
+          <span class="t">VIOLA</span>
+          <span class="sum">от 500 ₽</span>
+        </div>
+        <div>
+          <h3>Подарите заботу</h3>
+          <p>Сертификаты на любой номинал — физические и электронные. Идея подарка на любой праздник.</p>
+          <a class="btn btn-plum" href="#book" data-proc="cert|Подарочный сертификат">Купить сертификат</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section style="padding-top:0">
+    <div class="wrap reviews">
+      <div class="r-score reveal">
+        <div>
+          <span class="kicker" style="color:#ddd2f0">Отзывы</span>
+          <div class="big" style="margin-top:16px">5.0</div>
+          <span class="stars" style="font-size:16px">★★★★★</span>
+        </div>
+        <p>33 оценки и 30 отзывов в 2ГИС. <a href="https://2gis.ru/pyatigorsk/firm/12526164744602280/tab/reviews" target="_blank" rel="noopener">Читать отзывы →</a></p>
+      </div>
+      <div class="r-themes reveal">
+        <h3>Что чаще всего отмечают гости</h3>
+        <div class="theme-list">
+          <div><em>💆‍♀️</em>Глубокий, расслабляющий массаж</div>
+          <div><em>✨</em>Результат после фотоомоложения</div>
+          <div><em>🌿</em>Чисто, уютно и спокойно</div>
+          <div><em>🎵</em>Приятная музыка и ароматы</div>
+          <div><em>💜</em>Внимательные специалисты</div>
+          <div><em>📍</em>Удобно — в центре города</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" style="padding-top:0">
+    <div class="wrap book">
+      <div class="book-copy reveal">
+        <span class="kicker">Онлайн-запись</span>
+        <h2>Запишитесь <em>на приём</em></h2>
+        <p>Оставьте заявку — администратор свяжется с вами, ответит на вопросы и подберёт удобное время.</p>
+        <div class="cta">
+          <a class="btn btn-wa" href="https://wa.me/79289367298" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-max" href="https://max.ru/u/f9LHodD0cOK2wFYBAtwKZ3Esj-9cR9CvtsTNpPrikWdXgPuepH3lUZya09M" target="_blank" rel="noopener"><img class="max-ico" src="img/max.png" alt=""> Max</a>
+        </div>
+        <div class="book-photo"><img src="img/aroma.jpg" alt="Спа-атмосфера: полотенце, свеча и тюльпаны" loading="lazy"></div>
+      </div>
+      <form id="bookForm" class="reveal">
+        <h3>Заявка</h3>
+        <label>Имя<input name="name" required placeholder="Как к вам обращаться" autocomplete="name"></label>
+        <label>Телефон<input name="phone" type="tel" required placeholder="+7 (___) ___-__-__" autocomplete="tel"></label>
+        <div class="row">
+          <label>Направление
+            <select name="dir" id="fDir">
+              <option value="face">Лицо</option>
+              <option value="body">Тело</option>
+              <option value="nails">Ногти</option>
+              <option value="cert">Сертификат</option>
+            </select>
+          </label>
+          <label>Процедура
+            <select name="proc" id="fProc"></select>
+          </label>
+        </div>
+        <div class="row">
+          <label>Дата<input name="date" id="fDate" type="date" required></label>
+          <label>Удобное время<input name="time" type="time" required></label>
+        </div>
+        <label>Комментарий<textarea name="comment" id="fComment" rows="2" placeholder="Например: хочу консультацию"></textarea></label>
+        <label class="consent"><input type="checkbox" required> <span>Согласна(-ен) на обработку персональных данных и с политикой конфиденциальности</span></label>
+        <button class="btn btn-plum" type="submit">Отправить заявку</button>
+        <p class="form-msg" id="formMsg">Это демо: заявка никуда не отправляется. На рабочем сайте она сразу придёт администратору в WhatsApp, Telegram или Max.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="kicker">Контакты</span><h2>Ждём вас <em>в студии</em></h2></div>
+      <div class="contacts">
+        <div class="addr reveal">
+          <div>
+            <span class="kicker">Адрес</span>
+            <h3>ул. Крайнего, 49</h3>
+            <p>Пятигорск, 3 этаж, офис 312–313</p>
+            <span class="hours"><i></i>Пн–Сб 9:00–20:00 · по записи</span>
+          </div>
+          <a class="btn btn-plum" href="https://2gis.ru/pyatigorsk/firm/12526164744602280" target="_blank" rel="noopener" style="align-self:flex-start">Маршрут в 2ГИС</a>
+        </div>
+        <div class="links">
+          <a class="lnk reveal" href="tel:+79289367298"><div><small>Мобильный</small><b>+7 928 936-72-98</b></div><span class="ic" style="background:var(--plum)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span></a>
+          <a class="lnk reveal" href="tel:+78793363637"><div><small>Городской</small><b>+7 (8793) 36-36-37</b></div><span class="ic" style="background:var(--lav)"><svg viewBox="0 0 24 24" fill="#5b3f86"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span></a>
+          <a class="lnk reveal" href="https://wa.me/79289367298" target="_blank" rel="noopener"><div><small>WhatsApp</small><b>Написать в WhatsApp</b></div><span class="ic" style="background:var(--wa)"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg></span></a>
+          <a class="lnk reveal" href="https://max.ru/u/f9LHodD0cOK2wFYBAtwKZ3Esj-9cR9CvtsTNpPrikWdXgPuepH3lUZya09M" target="_blank" rel="noopener"><div><small>Max</small><b>Написать в Max</b></div><span class="ic"><img src="img/max.png" alt=""></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Демо-концепт · сделал <b>Денис Лопатин</b> · Имеются противопоказания, необходима консультация специалиста</span>
+    <span>Данные — из открытых карточек студии в 2ГИС и Taplink · Фото: Unsplash</span>
+  </div>
+</footer>
+
+<div class="float-msg">
+  <a class="fab fab-max" href="https://max.ru/u/f9LHodD0cOK2wFYBAtwKZ3Esj-9cR9CvtsTNpPrikWdXgPuepH3lUZya09M" target="_blank" rel="noopener" data-label="Написать в Max" aria-label="Написать в Max"><img src="img/max.png" alt=""></a>
+  <a class="fab fab-wa" href="https://wa.me/79289367298" target="_blank" rel="noopener" data-label="Написать в WhatsApp" aria-label="Написать в WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg>
+  </a>
+</div>
+
+<nav class="mobile-bar" aria-label="Быстрая связь">
+  <a class="mb-call" href="tel:+79289367298">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Позвонить
+  </a>
+  <a class="mb-wa" href="https://wa.me/79289367298" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg>
+    WhatsApp
+  </a>
+  <a class="mb-max" href="https://max.ru/u/f9LHodD0cOK2wFYBAtwKZ3Esj-9cR9CvtsTNpPrikWdXgPuepH3lUZya09M" target="_blank" rel="noopener">
+    <img class="max-ico" src="img/max.png" alt="">
+    Max
+  </a>
+</nav>
+
+<script>
+  // Процедуры для формы — из Taplink студии
+  var PROCS = {
+    face: ['Консультация косметолога', 'Фотоомоложение', 'Чистка лица', 'Пилинг', 'СМАС-лифтинг', 'Аппаратная косметология', 'Массаж лица', 'Плазмолифтинг, биоревитализация, мезотерапия', 'Фотоэпиляция', 'Электроэпиляция', 'Шугаринг, воск', 'Удаление новообразований', 'Удаление сосудов', 'Удаление пигментации', 'Коррекция и окрашивание бровей'],
+    body: ['Массаж всего тела', 'Лимфодренажный массаж', 'Антицеллюлитный массаж', 'Релакс-массаж', 'Шейно-воротниковый массаж', 'Моделирующий массаж', 'Испанский массаж', 'B-flexy — вакуумно-роликовый массаж', 'Абонемент на коррекцию фигуры', 'Обёртывание', 'Пилинг тела', 'Арома-сауна', 'Массаж травяными мешочками', 'Гуаша'],
+    nails: ['Классический маникюр', 'Японский маникюр', 'Аппаратный маникюр', 'Маникюр с гель-лаком', 'Классический педикюр', 'Японский педикюр', 'Аппаратный педикюр'],
+    cert: ['Подарочный сертификат']
+  };
+
+  // Подбор: зона → беспокойство → процедуры (только из списка услуг студии)
+  var QUIZ = {
+    face: { title: 'Лицо', items: [
+      ['Пигментация', ['Фотоомоложение', 'Удаление пигментации', 'Пилинг']],
+      ['Сосудики, купероз', ['Фотоомоложение', 'Удаление сосудов']],
+      ['Морщины, тонус', ['СМАС-лифтинг', 'Массаж лица', 'Плазмолифтинг, биоревитализация, мезотерапия']],
+      ['Поры, высыпания', ['Чистка лица', 'Пилинг']],
+      ['Нежелательные волосы', ['Фотоэпиляция', 'Электроэпиляция', 'Шугаринг, воск']],
+      ['Новообразования', ['Удаление новообразований', 'Консультация косметолога']]
+    ]},
+    body: { title: 'Тело', items: [
+      ['Целлюлит', ['B-flexy — вакуумно-роликовый массаж', 'Антицеллюлитный массаж', 'Обёртывание']],
+      ['Отёки, тяжесть', ['Лимфодренажный массаж', 'B-flexy — вакуумно-роликовый массаж']],
+      ['Коррекция фигуры', ['B-flexy — вакуумно-роликовый массаж', 'Моделирующий массаж', 'Абонемент на коррекцию фигуры']],
+      ['Стресс, усталость', ['Релакс-массаж', 'Арома-сауна', 'Массаж травяными мешочками']],
+      ['Шея и спина', ['Шейно-воротниковый массаж', 'Массаж всего тела']]
+    ]},
+    nails: { title: 'Руки и стопы', items: [
+      ['Аккуратные руки', ['Японский маникюр', 'Аппаратный маникюр']],
+      ['Стойкое покрытие', ['Маникюр с гель-лаком']],
+      ['Ухоженные стопы', ['Аппаратный педикюр', 'Японский педикюр']]
+    ]}
+  };
+
+  var fDir = document.getElementById('fDir'), fProc = document.getElementById('fProc');
+  function fillProcs(dir, selected) {
+    fProc.innerHTML = '';
+    PROCS[dir].forEach(function (p) { var o = document.createElement('option'); o.textContent = p; fProc.appendChild(o); });
+    if (selected) fProc.value = selected;
+  }
+  fDir.addEventListener('change', function () { fillProcs(fDir.value); });
+  fillProcs('face');
+
+  function preset(dir, proc, comment) {
+    fDir.value = dir; fillProcs(dir, proc);
+    if (comment) document.getElementById('fComment').value = comment;
+  }
+  document.querySelectorAll('[data-proc]').forEach(function (a) {
+    a.addEventListener('click', function () { var p = a.dataset.proc.split('|'); preset(p[0], p[1]); });
+  });
+
+  // quiz
+  var zones = document.getElementById('zones'), concerns = document.getElementById('concerns');
+  var step2 = document.getElementById('step2'), rTitle = document.getElementById('rTitle');
+  var rList = document.getElementById('rList'), rBtn = document.getElementById('rBtn');
+  var current = { z: null, c: null };
+
+  zones.addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return;
+    current.z = b.dataset.z; current.c = null;
+    zones.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+    concerns.innerHTML = '';
+    QUIZ[current.z].items.forEach(function (it, i) {
+      var c = document.createElement('button');
+      c.type = 'button'; c.className = 'chip'; c.textContent = it[0]; c.dataset.i = i;
+      concerns.appendChild(c);
+    });
+    step2.hidden = false;
+    rTitle.textContent = 'Теперь выберите, что беспокоит';
+    rList.innerHTML = ''; rBtn.style.visibility = 'hidden';
+  });
+
+  concerns.addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return;
+    concerns.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+    var item = QUIZ[current.z].items[+b.dataset.i];
+    current.c = item;
+    rTitle.textContent = QUIZ[current.z].title + ': ' + item[0].toLowerCase();
+    rList.innerHTML = item[1].map(function (p) { return '<li>' + p + '</li>'; }).join('');
+    rBtn.style.visibility = 'visible';
+    if (window.innerWidth <= 980) document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  rBtn.addEventListener('click', function () {
+    if (!current.c) return;
+    preset(current.z, current.c[1][0], 'Подбор на сайте: ' + current.c[0].toLowerCase() + '. Хочу консультацию.');
+  });
+
+  document.getElementById('fDate').min = new Date().toISOString().slice(0, 10);
+  document.getElementById('bookForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('formMsg').style.display = 'block';
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
