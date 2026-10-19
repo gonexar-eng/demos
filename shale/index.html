@@ -104,6 +104,7 @@
 
   /* builder */
   .builder { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; margin-top: 50px; }
+  .builder > *, .dates > * { min-width: 0; }
   .panel { background: var(--card); border: 1px solid var(--line); border-radius: 26px; padding: 34px; }
   .q { margin-bottom: 28px; }
   .q > label, .q > .lbl { display: block; font-weight: 800; margin-bottom: 12px; }
@@ -189,6 +190,7 @@
     .panel, .result { padding: 24px; }
     .fact { padding: 24px 16px; }
     .fact b { font-size: 36px; }
+    .dates { grid-template-columns: 1fr; }
   }
 </style>
 </head>
