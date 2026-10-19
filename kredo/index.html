@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Гостевой дом «Кредо» — Кисловодск, рядом с Курортным парком</title>
+<meta name="description" content="Демо-концепт сайта гостевого дома «Кредо»: уютные номера в историческом центре Кисловодска, 12 минут пешком до Курортного парка. ул. Суворова, 10.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --bg2: #f1eee7;
+    --ink: #142033;
+    --muted: #5d6676;
+    --line: #e0dbd0;
+    --navy: #1d3557;
+    --navy2: #2b4a75;
+    --gold: #b98a3c;
+    --gold-l: #e9d3a6;
+    --wa: #25d366;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.02; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: clamp(38px, 5vw, 64px); }
+  .eyebrow { display: flex; align-items: center; gap: 14px; font-size: 12.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+  .eyebrow::before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+  .sub { color: var(--muted); font-size: 17.5px; max-width: 560px; margin: 18px 0 0; }
+  section { padding: 108px 0; scroll-margin-top: 70px; }
+
+  .demo-bar { background: var(--ink); color: #aab3c2; font-size: 12.5px; text-align: center; padding: 7px 16px; }
+  .demo-bar b { color: #fff; }
+
+  header { position: sticky; top: 0; z-index: 30; background: rgba(251,250,247,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
+  .logo { text-decoration: none; display: flex; align-items: baseline; gap: 10px; }
+  .logo b { font-family: var(--serif); font-size: 30px; font-weight: 700; letter-spacing: .06em; color: var(--navy); }
+  .logo small { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .menu { display: flex; gap: 30px; font-size: 14.5px; font-weight: 500; }
+  .menu a { text-decoration: none; color: #3a4456; }
+  .menu a:hover { color: var(--gold); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 4px; border: 0; font: 600 15.5px var(--sans); text-decoration: none; cursor: pointer; transition: transform .15s, background .15s; white-space: nowrap; letter-spacing: .01em; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-navy:hover { background: var(--navy2); }
+  .btn-gold { background: var(--gold); color: #fff; }
+  .btn-line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+  .btn-wa { background: var(--wa); color: #06260f; }
+  .btn-sm { height: 44px; padding: 0 20px; font-size: 14.5px; }
+
+  .hero { padding: 70px 0 0; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; align-items: center; }
+  .hero h1 { font-size: clamp(52px, 7.4vw, 104px); color: var(--navy); }
+  .hero h1 i { color: var(--gold); }
+  .hero p { font-size: 19px; color: var(--muted); max-width: 470px; margin: 24px 0 34px; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-pic { position: relative; }
+  .hero-pic img { width: 100%; aspect-ratio: 5/4; object-fit: cover; border-radius: 2px; }
+  .hero-pic .frame { position: absolute; inset: 22px -22px -22px 22px; border: 1.5px solid var(--gold); z-index: -1; }
+  .ribbon { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 90px; background: var(--navy); color: #dfe6f1; }
+  .ribbon div { padding: 28px 24px; border-right: 1px solid rgba(255,255,255,.12); }
+  .ribbon div:last-child { border-right: 0; }
+  .ribbon b { display: block; font-family: var(--serif); font-size: 40px; color: #fff; line-height: 1; margin-bottom: 6px; }
+  .ribbon span { font-size: 14px; }
+
+  /* walk */
+  .walk { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; margin-top: 50px; }
+  .dest { display: grid; gap: 10px; }
+  .dest button { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 20px 22px; background: #fff; border: 1px solid var(--line); border-radius: 4px; font: 500 17px var(--sans); color: var(--ink); cursor: pointer; text-align: left; transition: all .15s; }
+  .dest button span { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--navy); }
+  .dest button:hover { border-color: var(--gold); }
+  .dest button.on { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .dest button.on span { color: var(--gold-l); }
+  .route { position: relative; border-radius: 2px; overflow: hidden; min-height: 470px; color: #fff; }
+  .route img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .4s; }
+  .route::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,32,51,.05), rgba(20,32,51,.85)); }
+  .route-info { position: absolute; z-index: 2; left: 30px; right: 30px; bottom: 28px; }
+  .route-info .min { font-family: var(--serif); font-size: 76px; line-height: .9; }
+  .route-info .min small { font-size: 26px; }
+  .route-info h3 { font-size: 34px; margin: 10px 0 8px; }
+  .route-info p { margin: 0; color: #d6deea; max-width: 460px; }
+  .steps { display: flex; align-items: center; gap: 10px; margin-top: 16px; font-size: 14px; color: var(--gold-l); }
+  .steps i { flex: 1; height: 2px; background: repeating-linear-gradient(90deg, var(--gold-l) 0 8px, transparent 8px 14px); }
+
+  /* rooms */
+  .rooms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+  .room { background: #fff; border: 1px solid var(--line); }
+  .room img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .room div { padding: 24px; }
+  .room h3 { font-size: 30px; color: var(--navy); }
+  .room p { color: var(--muted); font-size: 15px; margin: 8px 0 14px; }
+  .room ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .room li { font-size: 12.5px; background: var(--bg2); padding: 5px 10px; border-radius: 20px; }
+  .amen { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
+  .amen div { display: flex; gap: 12px; align-items: center; padding: 16px 18px; background: #fff; border: 1px solid var(--line); font-size: 15px; }
+  .amen span { font-size: 22px; }
+
+  /* booking */
+  .booking { background: var(--navy); color: #e2e8f2; }
+  .booking .eyebrow { color: var(--gold-l); }
+  .booking .eyebrow::before { background: var(--gold-l); }
+  .booking h2 { color: #fff; }
+  .booking .sub { color: #b4c0d3; }
+  .bgrid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; margin-top: 46px; }
+  .form { background: #fff; color: var(--ink); padding: 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form .full { grid-column: 1 / -1; }
+  .form label { display: block; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 7px; letter-spacing: .02em; }
+  .form input, .form select { width: 100%; height: 52px; border: 1px solid var(--line); border-radius: 3px; padding: 0 14px; font: 500 16px var(--sans); background: #fff; color: var(--ink); }
+  .form input:focus, .form select:focus { outline: none; border-color: var(--navy); }
+  .toggle { display: flex; align-items: center; gap: 12px; font-size: 15px; cursor: pointer; }
+  .toggle input { width: 20px; height: 20px; accent-color: var(--navy); }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; color: var(--muted); }
+  .consent input { margin-top: 3px; accent-color: var(--navy); width: auto; height: auto; }
+  .consent a { color: var(--navy); }
+  .direct { border: 1px solid rgba(255,255,255,.2); padding: 34px; display: flex; flex-direction: column; }
+  .direct h3 { color: #fff; font-size: 34px; margin-bottom: 18px; }
+  .direct ul { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 16px; }
+  .direct li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; font-size: 15.5px; }
+  .direct li b { color: #fff; display: block; }
+  .direct .ok { color: var(--gold-l); font-size: 20px; }
+  .msg { margin-top: auto; background: rgba(255,255,255,.07); border-left: 3px solid var(--gold); padding: 16px 18px; font-size: 14px; white-space: pre-line; color: #dbe3ef; min-height: 90px; }
+
+  /* reviews */
+  .revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 50px; border-top: 1px solid var(--line); }
+  .rev { padding: 34px 30px 10px 0; border-right: 1px solid var(--line); margin-right: 30px; }
+  .rev:last-child { border-right: 0; margin-right: 0; }
+  .rev p { font-family: var(--serif); font-size: 24px; line-height: 1.3; margin: 0; color: var(--navy); }
+  .rev small { display: block; margin-top: 16px; color: var(--muted); font-size: 13px; }
+  .ratings { display: flex; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
+  .ratings div b { font-family: var(--serif); font-size: 56px; color: var(--navy); line-height: 1; }
+  .ratings div span { display: block; color: var(--muted); font-size: 14px; }
+
+  .contact { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; }
+  .crow { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .crow span { display: block; color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+  .crow b { font-size: 20px; font-weight: 600; }
+  .crow a { text-decoration: none; }
+  .map { min-height: 400px; border: 1px solid var(--line); }
+  .map iframe { width: 100%; height: 100%; min-height: 400px; border: 0; display: block; }
+
+  footer { background: var(--ink); color: #9aa5b6; padding: 46px 0 120px; font-size: 13.5px; }
+  footer a { color: var(--gold-l); }
+  .credits { margin-top: 14px; font-size: 12px; color: #7d889a; line-height: 1.7; }
+
+  .mbar { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 40; gap: 10px; }
+  .mbar a { flex: 1; height: 54px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none; box-shadow: 0 12px 30px -10px rgba(0,0,0,.5); }
+
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: none; align-items: center; justify-content: center; z-index: 60; padding: 16px; }
+  .modal.on { display: flex; }
+  .modal > div { background: #fff; max-width: 560px; padding: 30px; font-size: 14.5px; max-height: 80vh; overflow: auto; }
+  .modal h3 { font-size: 28px; margin-bottom: 10px; color: var(--navy); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s, transform .7s; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 980px) {
+    .menu, .nav .btn { display: none; }
+    section { padding: 78px 0; }
+    .hero-grid, .walk, .bgrid, .contact { grid-template-columns: 1fr; }
+    .hero-pic .frame { display: none; }
+    .ribbon { grid-template-columns: 1fr 1fr; margin-top: 60px; }
+    .ribbon div:nth-child(2) { border-right: 0; }
+    .ribbon div:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.12); }
+    .rooms, .revs { grid-template-columns: 1fr; }
+    .rev { border-right: 0; margin-right: 0; border-bottom: 1px solid var(--line); padding: 28px 0; }
+    .amen { grid-template-columns: 1fr 1fr; }
+    .route { min-height: 400px; }
+    .mbar { display: flex; }
+    .demo-bar .long { display: none; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .form { grid-template-columns: 1fr; padding: 22px; }
+    .direct { padding: 24px; }
+    .ribbon div { padding: 20px 16px; }
+    .ribbon b { font-size: 32px; }
+    .amen { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-bar">Демо-концепт<span class="long"> сайта для гостевого дома «Кредо»</span> · подготовил <b>Денис Лопатин</b><span class="long"> · не является официальным сайтом</span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>КРЕДО</b><small>гостевой дом · Кисловодск</small></a>
+    <nav class="menu"><a href="#walk">Расположение</a><a href="#rooms">Номера</a><a href="#book">Бронирование</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    <a class="btn btn-navy btn-sm" href="#book">Забронировать</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Исторический центр Кисловодска</div>
+          <h1>12 минут <i>до парка</i>, а дома — тишина</h1>
+          <p>Уютный гостевой дом на улице Суворова: чистые номера с кухней, внимательные хозяева и Курортный парк в пешей доступности.</p>
+          <div class="hero-cta">
+            <a class="btn btn-navy" href="#book">Узнать свободные даты</a>
+            <a class="btn btn-line" href="tel:+79608848071">8 (960) 884-80-71</a>
+          </div>
+        </div>
+        <div class="hero-pic reveal"><span class="frame"></span><img src="img/hero.jpg" alt="Колоннада Кисловодска"></div>
+      </div>
+    </div>
+    <div class="wrap"><div class="ribbon reveal">
+      <div><b>4,6 ★</b><span>в Google Картах</span></div>
+      <div><b>158</b><span>отзывов на Островке</span></div>
+      <div><b>12 мин</b><span>пешком до Курортного парка</span></div>
+      <div><b>Кухня</b><span>в каждом номере</span></div>
+    </div></div>
+  </section>
+
+  <section id="walk">
+    <div class="wrap">
+      <div class="eyebrow">Расположение</div>
+      <h2>Всё самое красивое — пешком</h2>
+      <p class="sub">Выберите, куда хотите пойти, и посмотрите, сколько идти от нашей двери. Машина на отдыхе не понадобится.</p>
+      <div class="walk">
+        <div class="dest" id="dest"></div>
+        <div class="route reveal">
+          <img id="rImg" src="img/park.jpg" alt="">
+          <div class="route-info">
+            <div class="min"><span id="rMin">12</span> <small>мин пешком</small></div>
+            <h3 id="rTitle">Курортный парк</h3>
+            <p id="rText"></p>
+            <div class="steps"><span>ул. Суворова, 10</span><i></i><span id="rTo">парк</span></div>
+          </div>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px">Время в пути указано примерно.</p>
+    </div>
+  </section>
+
+  <section id="rooms" style="background:var(--bg2)">
+    <div class="wrap">
+      <div class="eyebrow">Номера</div>
+      <h2>Как дома, только на курорте</h2>
+      <p class="sub">В каждом номере — своя кухня, кондиционер и Wi-Fi. Можно приехать с питомцем, а хозяева подскажут, куда сходить.</p>
+      <div class="rooms">
+        <div class="room reveal"><img src="img/room.jpg" alt="Номер (фото примерное)"><div><h3>Стандарт</h3><p>Для двоих: двуспальная кровать и мини-кухня.</p><ul><li>2 гостя</li><li>кухня</li><li>кондиционер</li></ul></div></div>
+        <div class="room reveal"><img src="img/room2.jpg" alt="Номер (фото примерное)"><div><h3>Семейный</h3><p>Для семьи с ребёнком: есть место для дополнительной кровати.</p><ul><li>до 4 гостей</li><li>кухня</li><li>Wi-Fi</li></ul></div></div>
+        <div class="room reveal"><img src="img/breakfast.jpg" alt="Завтрак (фото примерное)"><div><h3>Долгий отдых</h3><p>Приезжаете на лечение или на неделю-две? Расскажите — подберём номер и условия.</p><ul><li>от 7 ночей</li><li>своя кухня</li><li>тишина</li></ul></div></div>
+      </div>
+      <div class="amen">
+        <div><span>📶</span>Бесплатный Wi-Fi</div>
+        <div><span>❄️</span>Кондиционер</div>
+        <div><span>🍳</span>Кухня во всех номерах</div>
+        <div><span>🐾</span>Можно с животными</div>
+      </div>
+      <p style="color:var(--muted);font-size:13px;margin-top:16px">Категории номеров и фото в демо примерные — на рабочем сайте будут ваши номера и цены.</p>
+    </div>
+  </section>
+
+  <section class="booking" id="book">
+    <div class="wrap">
+      <div class="eyebrow">Бронирование напрямую</div>
+      <h2>Напишите нам — без посредников</h2>
+      <p class="sub">Заполните форму, и сайт соберёт сообщение для хозяев в WhatsApp. Ответим, свободны ли даты, и назовём цену.</p>
+      <div class="bgrid">
+        <form class="form reveal" id="f" onsubmit="return false">
+          <div><label for="dIn">Заезд</label><input type="date" id="dIn"></div>
+          <div><label for="dOut">Выезд</label><input type="date" id="dOut"></div>
+          <div><label for="room">Номер</label><select id="room"><option>Стандарт</option><option>Семейный</option><option>Долгий отдых</option><option>Пока не знаю</option></select></div>
+          <div><label for="gs">Гостей</label><select id="gs"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div>
+          <div class="full"><label for="nm">Ваше имя</label><input type="text" id="nm" placeholder="Например, Ольга"></div>
+          <label class="toggle full"><input type="checkbox" id="pet"> Поеду с питомцем</label>
+          <label class="consent full"><input type="checkbox" id="agree"> <span>Согласен(-на) на обработку персональных данных и с <a href="#" data-policy>политикой конфиденциальности</a></span></label>
+          <a class="btn btn-gold full" id="send" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+            Отправить в WhatsApp
+          </a>
+        </form>
+        <div class="direct reveal">
+          <h3>Почему напрямую выгоднее</h3>
+          <ul>
+            <li><span class="ok">✓</span><div><b>Без комиссии сервисов</b>Цена от хозяев, без наценки агрегатора</div></li>
+            <li><span class="ok">✓</span><div><b>Живой ответ</b>Можно сразу обсудить поздний заезд или питомца</div></li>
+            <li><span class="ok">✓</span><div><b>Подскажем маршрут</b>Как добраться с вокзала и куда сходить</div></li>
+          </ul>
+          <div class="msg" id="msg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="eyebrow">Отзывы</div>
+      <h2>Что говорят гости</h2>
+      <div class="ratings"><div><b>4,6</b><span>Google Карты · 25 оценок</span></div><div><b>158</b><span>отзывов на Островке</span></div></div>
+      <div class="revs">
+        <div class="rev reveal"><p>«Отличный гостевой дом недалеко от парка и Колоннады. Хозяйка гостеприимная, всё рассказала, как добраться».</p><small>Отзыв из Google Карт</small></div>
+        <div class="rev reveal"><p>«Очень уютно, хозяева чуткие и отзывчивые. Удобное расположение, до парка 15 минут пешком».</p><small>Отзыв из Google Карт</small></div>
+        <div class="rev reveal"><p>«Вежливые хозяева, уютный дом, недалеко от центра и приятная цена».</p><small>Отзыв из Google Карт</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" style="background:var(--bg2)">
+    <div class="wrap contact">
+      <div class="reveal">
+        <div class="eyebrow">Контакты</div>
+        <h2>Ждём вас в Кисловодске</h2>
+        <div class="crow" style="margin-top:22px"><span>Адрес</span><b>Кисловодск, ул. Суворова, 10</b></div>
+        <div class="crow"><span>Телефон и WhatsApp</span><b><a href="tel:+79608848071">8 (960) 884-80-71</a></b></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px">
+          <a class="btn btn-wa" href="https://wa.me/79608848071" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-line" href="tel:+79608848071">Позвонить</a>
+        </div>
+      </div>
+      <div class="map reveal"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=42.7025%2C43.8925%2C42.7165%2C43.8985&amp;layer=mapnik&amp;marker=43.89555%2C42.70952" loading="lazy" title="Карта: ул. Суворова, 10"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© Гостевой дом «Кредо» · Кисловодск · демо-концепт сайта, подготовил Денис Лопатин. Не является официальным сайтом. Категории номеров и фото примерные.</div>
+    <div><a href="#" data-policy>Политика конфиденциальности</a></div>
+    <div class="credits">Фото: Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Colonnade_%D0%9A%D0%BE%D0%BB%D0%BE%D0%BD%D0%BD%D0%B0%D0%B4%D0%B0.jpg" target="_blank" rel="noopener">AlixSaz</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%80%D0%B5%D0%BB%D1%8C%D0%B5%D1%84_%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0_%D0%92.%D0%98._%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B5_%D0%BA%D0%B0%D0%BC%D0%BD%D0%B8_(%D0%9A%D1%83%D1%80%D0%BE%D1%80%D1%82%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA),_%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA_04.jpg" target="_blank" rel="noopener">Kemal KOZBAEV</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Cypress_alley._Kislovodsk._%D0%9A%D0%B8%D0%BF%D0%B0%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D1%8F_%D0%B0%D0%BB%D0%BB%D0%B5%D1%8F._%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D0%BA.jpg" target="_blank" rel="noopener">AlixSaz</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Hotel_room_Hotel_Burgenland_in_Eisenstadt.JPG" target="_blank" rel="noopener">Usien</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:Hotel_bed_with_lit_lamp_at_Hotel_Esplanade_in_October_2023.jpg" target="_blank" rel="noopener">JIP</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Breakfast_in_%C3%8Ele_d%27Orl%C3%A9ans_072.jpg" target="_blank" rel="noopener">Wilfredor</a> (CC0). Фото иллюстративные, не являются фотографиями объекта.</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+79608848071" style="background:#fff;color:var(--ink)">Позвонить</a>
+  <a href="#book" style="background:var(--navy);color:#fff">Бронь</a>
+  <a href="https://wa.me/79608848071" target="_blank" rel="noopener" style="background:var(--wa);color:#06260f">WhatsApp</a>
+</div>
+
+<div class="modal" id="policy"><div>
+  <h3>Политика конфиденциальности</h3>
+  <p>Сайт не хранит ваши данные. Когда вы нажимаете «Отправить в WhatsApp», имя и даты передаются владельцу гостевого дома только через ваш мессенджер — чтобы ответить на запрос о бронировании.</p>
+  <p>Данные используются только для связи по бронированию и не передаются третьим лицам. Обработка ведётся в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
+  <button class="btn btn-navy btn-sm" type="button" id="closePolicy">Понятно</button>
+</div></div>
+
+<script>
+  var PHONE = '79608848071';
+  function $(id) { return document.getElementById(id); }
+  var D = [
+    { t: 'Курортный парк', m: 12, to: 'парк', img: 'park.jpg', x: 'Один из самых больших городских парков Европы: терренкуры, Красные камни, канатная дорога. Вход — почти рядом.' },
+    { t: 'Колоннада', m: 15, to: 'Колоннада', img: 'hero.jpg', x: 'Символ Кисловодска и главный вход в парк. Отсюда начинаются прогулки по Курортному бульвару.' },
+    { t: 'Нарзанная галерея', m: 15, to: 'галерея', img: 'alley.jpg', x: 'Попробуйте нарзан прямо из источника — за этим в Кисловодск ездят уже двести лет.' },
+    { t: 'Курортный бульвар', m: 12, to: 'бульвар', img: 'park.jpg', x: 'Кафе, сувениры и вечерние прогулки. Отсюда удобно вернуться домой пешком.' },
+    { t: 'Ж/д вокзал', m: 15, to: 'вокзал', img: 'alley.jpg', x: 'Приезжаете на поезде? До нас можно дойти пешком, а хозяева подскажут дорогу.' }
+  ];
+  $('dest').innerHTML = D.map(function (d, i) { return '<button type="button" data-i="' + i + '"' + (i === 0 ? ' class="on"' : '') + '>' + d.t + '<span>≈' + d.m + ' мин</span></button>'; }).join('');
+  function show(i) {
+    var d = D[i];
+    $('rMin').textContent = d.m; $('rTitle').textContent = d.t; $('rText').textContent = d.x; $('rTo').textContent = d.to;
+    $('rImg').src = 'img/' + d.img; $('rImg').alt = d.t;
+  }
+  document.querySelectorAll('#dest button').forEach(function (b) {
+    b.onclick = function () { document.querySelectorAll('#dest button').forEach(function (x) { x.classList.toggle('on', x === b); }); show(+b.dataset.i); };
+  });
+  show(0);
+
+  function fmt(d) { if (!d) return ''; var p = d.split('-'); return p[2] + '.' + p[1]; }
+  function update() {
+    var a = $('dIn').value, b = $('dOut').value, n = a && b ? Math.round((new Date(b) - new Date(a)) / 864e5) : 0;
+    var lines = ['Здравствуйте! Пишу с сайта гостевого дома «Кредо».'];
+    var nm = $('nm').value.trim(); if (nm) lines.push('Меня зовут ' + nm + '.');
+    lines.push('Номер: ' + $('room').value + ', гостей: ' + $('gs').value + '.');
+    if (n > 0) lines.push('Даты: ' + fmt(a) + ' — ' + fmt(b) + ' (' + n + ' ноч.)');
+    if ($('pet').checked) lines.push('Поеду с питомцем.');
+    lines.push('Свободно ли и сколько будет стоить?');
+    $('msg').textContent = lines.join('\n');
+    $('send').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lines.join('\n'));
+  }
+  ['dIn', 'dOut', 'room', 'gs', 'nm', 'pet'].forEach(function (id) { $(id).addEventListener('input', update); $(id).addEventListener('change', update); });
+  var today = new Date().toISOString().slice(0, 10); $('dIn').min = today; $('dOut').min = today;
+  $('send').addEventListener('click', function (e) { if (!$('agree').checked) { e.preventDefault(); var c = $('agree').parentElement; c.style.color = '#b23'; } });
+  document.querySelectorAll('[data-policy]').forEach(function (a) { a.onclick = function (e) { e.preventDefault(); $('policy').classList.add('on'); }; });
+  $('closePolicy').onclick = function () { $('policy').classList.remove('on'); };
+  $('policy').onclick = function (e) { if (e.target === this) this.classList.remove('on'); };
+  update();
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 }) : null;
+  document.querySelectorAll('.reveal').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+</script>
+</body>
+</html>
